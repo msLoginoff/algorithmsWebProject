@@ -1,0 +1,61 @@
+#genetic {
+    background-color: #fff;
+    border: 2px solid #000;
+    border-top: none;
+    display: none;
+    min-height: 48vw;
+    position: relative;
+}
+
+#genetic button.btn {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0 25px;
+	outline: none;
+	border: 1px solid #000000;
+	border-radius: 50px;
+	height: 46px;
+	line-height: 46px;
+	font-size: 1rem;
+	font-weight: 600;
+	text-decoration: none;
+	color: white;
+	background-color: #7db8ff;
+	box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
+	cursor: pointer;
+	user-select: none;
+	appearance: none;
+	touch-action: manipulation;
+	vertical-align: top;
+	transition: box-shadow 0.2s;
+	margin-bottom: 0.6vw;
+	margin-right: 1vw;
+	font-family: 'Cuprum', sans-serif;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+#genetic-div {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 93.5%;
+    border-bottom: 2px solid #000;
+    background-color: rgb(255, 255, 255);
+}
+
+#genetic-canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
+}

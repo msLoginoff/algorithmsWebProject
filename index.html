@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <!-- css links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cuprum:wght@700&display=swap" rel="stylesheet"> 
+
+        <link rel="stylesheet" href="indexStyle.css" type="text/css"></link>
+
+        <link rel="stylesheet" href="/scripts/aStar/aStarStyle.css" type="text/css">
+        <link rel="stylesheet" href="/scripts/clusteringAlgorithm/clusteringAlgorithm.css" type="text/css">
+        <link rel="stylesheet" href="/scripts/antAlgorithm/antAlgorithm.css" type="text/css">
+        <link rel="stylesheet" href="/scripts/geneticAlgorithm/geneticAlgorithm.css" type="text/css">
+
+        <!-- scripts -->
+        <script src="/scripts/antAlgorithm/antAlgorithm.js"></script>
+        <script src="/scripts/decisionTree/decisionTree.js"></script>
+        <script src="/scripts/neuralNetwork/neuralNetwork.js"></script>
+    </head>
+
+    <body>
+        <div class="tab", id = "tab">
+            <button class="tablinks" onclick="openTab(event, 'astar')"><font color="white">А*</font></button>
+            <button class="tablinks" onclick="openTab(event, 'clusteringAlg')"><font color="white">Алгоритм кластеризации</font></button>
+            <button class="tablinks" onclick="openTab(event, 'genetic')"><font color="white">Генетический алгоритм</font></button>
+            <button class="tablinks" onclick="openTab(event, 'antAlg')"><font color="white">Муравьиный алгоритм</font></button>
+            <!-- <button class="tablinks" onclick="openTab(event, '4')"><font color="white">Дерево решений</font></button> -->
+            <button class="tablinks" onclick="openTab(event, '5')"><font color="white">Нейронная сеть</font></button>
+        </div>
+
+        <script src="/scripts/mainScript.js"></script>
+
+        <div id="astar" class="tab-content", style="background-color: rgb(182, 219, 234);">
+            <div id="astar-div">
+                <canvas id="astar-canvas"></canvas>
+            </div>
+            <script src="scripts/aStar/aStar.js" defer></script>
+            <button id="run" class="btn" onclick="getMaze();">Сгенерировать лабиринт</button>
+            <button id="edit" class="btn" onclick="editMaze()">Изменить лабиринт</button>
+            <button id="editStart" class="btn">Изменить точку начала</button>
+            <div class="input">
+                <input type="number" class="form-input" id="size" placeholder="Значение" min="15" required="" />
+            </div>
+        </div>
+
+        <div id="clusteringAlg" class="tab-content", style="background-color: rgb(182, 219, 234);">
+            <canvas id = "canvas1", style="border-bottom: 2px solid #000; background-color: rgb(255, 255, 255);" "></canvas>
+            <script src="/scripts/clusteringAlgorithm/clusteringAlgorithm.js"></script>
+            <input class = 'K' id = 'K' onClick="this.select();" type="text", style="color: white", placeholder="K"></input>
+            <button class="button-run" onclick="runClusteringAlg()"><font color="white">Запустить</font></button>
+        </div>
+
+        <div id="genetic" class="tab-content", style="background-color: rgb(182, 219, 234);">
+            <div id="genetic-div">
+                <canvas id="genetic-canvas"></canvas>
+            </div>
+            <button id="run" class="btn">Запустить</button>
+        </div>
+
+        <div id="antAlg" class="tab-content", style="background-color: rgb(182, 219, 234);">
+            <canvas id = "canvas3", style="border-bottom: 2px solid #000; background-color: rgb(255, 255, 255);" "></canvas>
+            <script src="/scripts/antAlgorithm/antAlgorithm.js"></script>
+            <span style="position: relative; margin-top: 2vw; margin-left: 60vw;font-size: 1rem; font-family: 'Cuprum', sans-serif;">Длина маршрута</span>
+            <input class="Way", id = "Way" type="text" style="color: white" readonly><font color="white"></font>
+            <button class="button-run" onclick="runAntAlg()"><font color="white">Запустить</font></button>
+        </div>
+
+        <div id="4" class="tab-content">
+            <canvas id = "canvas4", style="border-bottom: 2px solid #000; background-color: rgb(255, 255, 255);" "></canvas>
+        </div>
+
+        <div id="5" class="tab-content">
+            <canvas id = "canvas5", style="border-bottom: 2px solid #000; background-color: rgb(255, 255, 255);" "></canvas>
+        </div>
+        
+        <script>
+            function openTab(evt, algorithmName) {
+                var i, tabContent, tablinks;
+
+                tabContent = document.getElementsByClassName("tab-content");
+                for (i = 0; i < tabContent.length; i++) {
+                    tabContent[i].style.display = "none";
+                }
+
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }   
+                
+                if (algorithmName != 'astar' && algorithmName != 'genetic') document.getElementById(algorithmName).style.display = "inline-block";
+                else document.getElementById(algorithmName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+    </body>
+</html> 

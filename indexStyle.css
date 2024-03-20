@@ -1,0 +1,44 @@
+html {
+    font-size: 16px;
+
+}
+
+body {
+    font-family: Arial;
+}
+  
+.tab {
+    overflow: hidden;
+    background-color: #7db8ff;
+    border: 2px solid #000;
+    text-align: center;
+}
+  
+.tab button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    padding: 0.875rem 1rem;
+    transition: padding 0.3s;
+    transition: font-size 0.3s ease-in-out;
+    font-size: 1rem;
+    font-family: 'Cuprum', sans-serif;
+}
+  
+.tab button:hover {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.3rem;
+}
+
+.tab button.active {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.3rem;
+}
+  
+.tab-content {
+    border: 2px solid #000;
+    border-top: none;
+    display: none;
+}
