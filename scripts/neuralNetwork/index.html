@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/styleButton.css">
+<script type="text/javascript" src="1.js"></script>
+<head>
+	<meta charset="UTF-8">
+	<title>Нейронная сетОчка</title>
+</head>
+<body>
+<content>
+	<div class="controlBar">
+		<button onclick="getNumberResult()">Старт</button>
+		<button onclick="currentCanvas.clear()">Очистить поле</button>
+		<button class="unimportant" id="learningButton" hidden="hidden" onclick="activateLearning()">запуск с обучением</button>
+		<button id="buttonStart" onclick="main()">Тестовый прогон</button>
+		<button class="unimportant" id="unlearningButton" onclick="deactivateLearning()">запуск без обучением</button>
+		<button class="unimportant" onclick="exportLearningWeights()">Export data to local txt file</button>
+		<div class="controlBarAnswer" id="controlBarAnswer">
+		</div>
+	</div>
+	<canvas id="canv" style="display: block" >чето</canvas>
+</content>
+
+<script type="text/javascript" src="canvasScript.js"></script>
+
+<script type="text/javascript" src="2.js"></script>
+<script type="text/javascript" src="3.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
