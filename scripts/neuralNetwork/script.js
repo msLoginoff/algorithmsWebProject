@@ -1,5 +1,4 @@
-import setForTesting from '3.js'
-import learningSet from '1.js'
+
 class Matrix {
     matrix;
     row;
