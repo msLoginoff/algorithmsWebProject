@@ -1,0 +1,24 @@
+.goButton {
+    padding: 40px 40px;
+    border: none;
+    font-size: 30px;
+    color: #fff;
+    border-radius: 50%;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+}
+
+.goButton {
+    background: rgb(255, 50, 50);
+    box-shadow: 0 0 50px rgb(255, 50, 50);
+}
+
+.goButton:hover {
+    box-shadow: 0 0 5px rgb(255, 50, 50),
+                0 0 25px rgb(255, 50, 50),
+                0 0 50px rgb(255, 50, 50),
+                0 0 100px rgb(255, 50, 50);
+}
