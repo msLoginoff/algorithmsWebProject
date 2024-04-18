@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    background-image: url("bgImage2.png");
+    animation: animatedBackground 500s linear infinite;
+}
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 -420px;
+    }
+
+    to {
+        background-position: -1000px -1310px;
+    }
+}
+
+content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button {
+    display: block;
+    width: 100%;
+    margin: 0 0 20px 0;
+    height: 50px;
+
+    appearance: none;
+    user-select: none;
+    outline: none;
+    border: 3px solid #ff8800;
+    border-radius: 45px;
+    font-size: 14px;
+    color: #ff8800;
+    font-family: "Roboto Light", sans-serif;
+    transition: 0.2s all;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.answerBar {
+    margin: 20px 10px 10px 10px;
+    border: 4px solid #ff8800;
+    border-radius: 10px;
+    width: 330px;
+    padding: 45px;
+    box-sizing: border-box;
+    color: #ff8800;
+    font-family: "Roboto Light", sans-serif;
+    background-color: rgba(0, 14, 35, 0.6);
+}
+
+.controlBar {
+    margin: 10px 10px 10px 10px;
+    border: 4px solid #ff8800;
+    border-radius: 10px;
+    width: 330px;
+    padding: 45px;
+    box-sizing: border-box;
+    background-color: rgba(0, 14, 35, 0.3);
+}
+
+.sliderContainer {
+    flex-wrap: wrap;
+}
+
+#sliderNum {
+    margin: 10px auto 0 auto;
+    display: block;
+    text-align: right;
+    background: rgba(255, 106, 0, 0);
+    border: none;
+    font-size: 16px;
+    color: #ff8800;
+}
+
+label {
+    color: #ff8800;
+    font-family: "Roboto Light", sans-serif;
+    font-size: 14px;
+    margin: 0 0 20px 0;
+}
+
+#sliderNum:focus {
+    outline: 0;
+}
+
+#boardParent {
+    margin: 0 20px 20px 0;
+    aspect-ratio: 1 / 1;
+}
+
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    margin: 10px 50px 10px 10px;
+    border: 4px solid #000a1f;
+    background-color: rgba(5, 111, 201, 0.34);
+}
+
+#board > .gridCell {
+    display: flex;
+    float: left;
+    padding: 0;
+    margin: 0;
+    box-shadow: inset 0 0 0 1px #000a1f;
+}
+
+.startCell {
+    //display: flex;
+    //float: left;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(31, 176, 50, 0.97);
+    box-shadow: inset 0 0 0 1px black;
+}
+
+.wallStyle {
+    background-color: rgb(0, 0, 0);
+    box-shadow: inset 0 0 0 1px black;
+}
+
+.startStyle {
+    background-color: lawngreen;
+    //box-shadow: inset 0 0 0 1px black;
+}
+
+.goalStyle {
+    background-color: firebrick;
+    box-shadow: inset 0 0 0 1px black;
+}
+
+.currentStyle {
+    background-color: #56028d;
+    box-shadow: inset 0 0 0 1px black;
+}
+
+.neighborStyle {
+    background-color: rgba(109, 68, 255, 0.55);
+    box-shadow: inset 0 0 0 1px black;
+}
+
+.answerStyle {
+    background-color: #ff8800;
+    box-shadow: inset 0 0 0 1px black;
+}

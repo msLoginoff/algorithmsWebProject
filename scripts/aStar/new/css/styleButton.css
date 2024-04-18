@@ -1,0 +1,39 @@
+button:hover {
+    border-color: #dcdcdcff;
+    color: #DCDCDCFF;
+}
+
+button:active {
+    border-color: #DCDCDCFF;
+    transform: scale(0.95);
+    animation: ease-in;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.95;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb:hover, .slider::-webkit-slider-thumb:active{
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    transition: .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #ff8800;
+    cursor: pointer;
+    border-radius: 7px;
+}
