@@ -1,0 +1,58 @@
+.goButton {
+    padding: 45px 45px;
+    text-transform: uppercase;
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: 500;
+    color: #DEE2E6;
+    text-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: transparent;
+    border: 1px solid #DEE2E6;
+    transition: 0.5s ease;
+    user-select: none;
+}
+  
+.goButton:hover {
+    color: #ffffff;
+    background: #ff0000;
+    border: 1px solid #ff0000;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px #ff0000, 0 0 20px #ff0000, 0 0 50px #ff0000,
+      0 0 100px #ff0000;
+}
+
+.goButton:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000, 0 0 70px #ff0000,
+      0 0 150px #ff0000;
+}
+
+.btn-close {
+  --bs-btn-close-focus-shadow: none;
+}
+
+.algorithmLabel {
+  cursor: pointer;
+}
+
+.iconButton {
+  font-weight: 500;
+  color: #DEE2E6;
+  text-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: transparent;
+  user-select: none;
+}
+
+.lableContainer .settingsIcon {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lableContainer:hover .settingsIcon {
+  opacity: 1;
+}

@@ -1,4 +1,4 @@
-import { Point, selectedMetrics } from "./clusteringAlgPage.js"
+import { Point, selectedMetrics } from "../clusteringAlgPage.js"
 export { kMeans, calculateDistance }
 
 function calculateDistance(point1, point2, metrics) {

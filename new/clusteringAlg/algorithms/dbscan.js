@@ -1,5 +1,5 @@
 import { calculateDistance } from "./kMeans.js";
-import { selectedMetrics } from "./clusteringAlgPage.js";
+import { selectedMetrics } from "../clusteringAlgPage.js";
 
 function findNeighbors(points, point, eps) {
     let neighbors = [];

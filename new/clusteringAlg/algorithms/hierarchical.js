@@ -1,5 +1,5 @@
 import { calculateDistance } from "./kMeans.js"
-import { selectedMetrics } from "./clusteringAlgPage.js"
+import { selectedMetrics } from "../clusteringAlgPage.js"
 
 export function hierarchicalClustering(points, clustersCount) {
     let clusters = points.map(point => [point]);

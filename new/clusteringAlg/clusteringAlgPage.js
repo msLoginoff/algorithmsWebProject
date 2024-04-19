@@ -1,6 +1,6 @@
-import { kMeans } from "./kMeans.js";
-import { hierarchicalClustering } from "./hierarchical.js";
-import { dbscanClustering } from "./dbscan.js";
+import { kMeans } from "./algorithms/kMeans.js";
+import { hierarchicalClustering } from "./algorithms/hierarchical.js";
+import { dbscanClustering } from "./algorithms/dbscan.js";
 import { animatePoint, animateClusterColoring, animateCentroidColoring, animateNoisyPointColoring, redrawCanvas } from "./drawFunctions.js"
 export { Point, canvasElements, RADIUS, points, centroids, noise, selectedMetrics }
 
