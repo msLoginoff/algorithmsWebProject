@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>A* запуск!</title>
+	<link rel="stylesheet" type="text/css" href="css/styleButton.css"/>
+	<link rel="stylesheet" type="text/css" href="css/stylePage.css"/>
+</head>
+<body>
+
+<content>
+	<div class="boardParent" id="boardParent">
+		<div class="board" id="board"></div>
+	</div>
+	<div class="controlBarParent">
+		<div class="controlBar">
+			<button id="buttonStart" onclick="search()">Старт</button>
+			<button id="buttonCleanWalls" onclick="cleanWalls()">Очистить стены</button>
+			<p><label>
+				Скорость отображения решения:<input type="number" size="1" min="0" max="800" id="sliderNum" value='750' readonly>
+			</label></p>
+			<div class="sliderContainer">
+				<input name="range" type="range" min="0" max="800" oninput="getValue()" id="mySlider" class="slider" value='750'/>
+			</div>
+		</div>
+		<div class="answerBar" id="answerBar">
+			Длина найденного маршрута составляет:
+<!--			<div id="answer"></div>-->
+		</div>
+	</div>
+
+</content>
+
+<script type="text/javascript" src="pageScript.js"></script>
+<script type="text/javascript" src="algorithm.js"></script>
+<script type="text/javascript" src="mazeGeneration.js"></script>
+
+<script>
+	function getValue() {
+        let slider = document.getElementById('mySlider');
+        timeCoefficient = 800 - slider.value;
+        let sliderNum = document.getElementById('sliderNum');
+        sliderNum.value = slider.value;
+	}
+    function pasteAnswer() {
+        let answerDelete = document.getElementById('answer');
+        if (answerDelete) {
+            answerDelete.remove();
+        }
+
+        let answerBar = document.getElementById('answerBar');
+        let answer = document.createElement('answer');
+        answer.setAttribute('id', 'answer');
+
+
+        if (answerLength === 0) {
+            answer.innerText = 'путь не найден';
+            answerBar.append(answer);
+            return;
+        }
+
+        answer.innerText = answerLength;
+        answerBar.append(answer);
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A*</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/styleButton.css"/>
+</head>
+<body>
+    <header>
+    </header>
+
+    <content>
+        <div class="shape">
+        </div>
+        <h1>Алгоритм поиска оптимального маршрута</h1>
+
+
+        <div class="allBoxes">
+
+            <div class="box-fill"></div>
+            <div class="box" id="box">
+                <h2>Укажите размер поля</h2>
+                <div class="window">
+                    <p><label>
+                        <input type="number" size="1" min="2" max="100" id="num" value='5' oninput="fun2()">
+                    </label></p>
+                    <div class="slidecontainer">
+                        <input name="range" type="range" min="2" oninput="fun1()" id="myRange" class="slider" value='5'/>
+                    </div>
+                </div>
+
+                <a class="a" href="page.html">
+                    <button class="buttonGo">Начать</button>
+                </a>
+                <a class="a" href="page.html?num='+num.value"></a>
+
+            </div>
+        </div>
+
+
+    </content>
+
+    <script>
+        const num = document.getElementById("num");
+        num.addEventListener("keyup", function(event) {
+            // Число 13 в "Enter" и клавиши на клавиатуре
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.querySelector("button").click();
+            }
+        });
+
+        function fun1() {
+            var slider = document.getElementById("myRange");
+            var num = document.getElementById("num");
+
+            activateLink(num);
+
+            if (slider.value % 1 !== 0) {
+                Math.round(slider.value);
+            }
+
+            num.value = slider.value;
+        }
+
+        function fun2() {
+            var slider = document.getElementById("myRange");
+            var num = document.getElementById("num");
+
+
+
+            if (num.value % 1 !== 0) {
+                Math.round(num.value);
+            }
+
+
+            if (num.value > 100) {
+                slider.value = Math.floor(num.value / 10);
+                num.value = Math.floor(num.value / 10);
+            }
+
+            else if (num.value < 0) {
+                num.value = 2;
+            }
+
+            else {
+                slider.value = num.value;
+                Math.round(num.value);
+            }
+
+            activateLink(num);
+        }
+
+    </script>
+    <script type="text/javascript" src="subScripts.js"></script>
+
+</body>
+</html>
