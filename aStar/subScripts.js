@@ -1,7 +1,7 @@
 
 
-let buttonGo = document.querySelector('button');
-let windowValue = document.getElementById("num");
+const buttonGo = document.querySelector('button');
+const windowValue = document.getElementById("num");
 
 const attentionText = document.createElement('p');
 attentionText.classList.add('attentionText');

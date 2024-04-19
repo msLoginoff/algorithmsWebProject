@@ -1,6 +1,6 @@
 
-let cols = Number(localStorage.getItem('fieldSize'));
-let rows = cols;
+const cols = Number(localStorage.getItem('fieldSize'));
+const rows = cols;
 
 let grid = new Array(cols);
 
@@ -185,7 +185,6 @@ function search() {
                 temp = temp.parent;
             }
             answerLength = path.length - 1;
-            console.log("DONE!", counter);
             for (let i = 0; i < path.length; i++) {
                 timeIdTwo = setTimeout(() => {
                     if (path[i] !== start && path[i] !== goal) {

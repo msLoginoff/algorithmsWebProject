@@ -1,9 +1,9 @@
 
-let fieldSize= localStorage.getItem('fieldSize');
+const fieldSize= localStorage.getItem('fieldSize');
 
 const board = document.getElementById('board');
 const boardParent = document.getElementById('boardParent');
-let height = document.documentElement.clientHeight - 25;
+const height = document.documentElement.clientHeight - 100;
 
 boardParent.style.maxWidth = `${height}px`
 boardParent.style.height = `${height}px`
