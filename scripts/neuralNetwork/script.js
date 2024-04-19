@@ -316,15 +316,54 @@ function readDataNetwork() {
 
 function getLearningSet() {
     const regex = new RegExp('[ \n]+')
+    if (typeof learningSet === 'string') {
+        let chars = learningSet.split(regex);
 
-    let chars = learningSet.split(regex);
+        let learningNumbers = [];
+        chars.forEach(ele => learningNumbers.push(+ele));
 
-    let learningNumbers = [];
-    chars.forEach(ele => learningNumbers.push(+ele));
+        Number(chars);
+        learningSet = learningNumbers;
+    } else {
+        console.log('Переменная learningSet не является строкой');
+    }
 
-    Number(chars);
-    learningSet = learningNumbers;
 
+
+}
+
+function resizeMatrix(matrix, newWidth, newHeight) {
+    const scaleX = newWidth / matrix.length;
+    const scaleY = newHeight / matrix[0].length;
+
+    const newMatrix = Array(newWidth * newHeight).fill(0);
+
+
+    for (let x = 0; x < newWidth; x++) {
+        for (let y = 0; y < newHeight; y++) {
+            const sourceX = x / scaleX;
+            const sourceY = y / scaleY;
+
+            const x1 = Math.floor(sourceX);
+            const x2 = Math.ceil(sourceX);
+            const y1 = Math.floor(sourceY);
+            const y2 = Math.ceil(sourceY);
+
+            const value1 = (matrix[x1] && matrix[x1][y1]) || 0;
+            const value2 = (matrix[x2] && matrix[x2][y1]) || 0;
+            const value3 = (matrix[x1] && matrix[x1][y2]) || 0;
+            const value4 = (matrix[x2] && matrix[x2][y2]) || 0;
+
+            const interpolatedValue = (value1 * (x2 - sourceX) * (y2 - sourceY) +
+                value2 * (sourceX - x1) * (y2 - sourceY) +
+                value3 * (x2 - sourceX) * (sourceY - y1) +
+                value4 * (sourceX - x1) * (sourceY - y1));
+
+            newMatrix[x * newWidth + y] = interpolatedValue;
+        }
+    }
+
+    return newMatrix;
 }
 
 function readDataFromLearningSet(learningSetLocal) {
@@ -333,14 +372,27 @@ function readDataFromLearningSet(learningSetLocal) {
     let dataInfo = [];
     let counter = 1;
 
+
+
     for(let i = 0; i < examplesNumber; i++) {
         dataInfo[i] = new DataInfo();
         dataInfo[i].pixels = [];
         dataInfo[i].digit = learningSetLocal[counter++];
+        let learningSetMatrix = new Array(28);
 
-        for (let j = 0; j < config[0]; j++) {
-            dataInfo[i].pixels[j] = learningSetLocal[counter++];
+        for (let j = 0; j < 28; j++) {
+            learningSetMatrix[j] = new Array(28);
         }
+
+        for (let j = 0; j < 28; j++) {
+            learningSetMatrix[j] = new Array(28);
+
+            for (let u = 0; u < 28; u++) {
+                learningSetMatrix[j][u] = learningSetLocal[counter++];
+            }
+        }
+
+        dataInfo[i].pixels = resizeMatrix(learningSetMatrix, 50, 50);
     }
 
     return dataInfo;
@@ -426,6 +478,7 @@ function testRun() {
     for (let i = 0; i < examplesNumber; i++) {
         netWork.setInput(data[i].pixels);
         rightDigit = data[i].digit;
+        console.log(data[i].pixels, rightDigit)
         predictDigit = netWork.forwardFeed();
 
         if (predictDigit === rightDigit) {
