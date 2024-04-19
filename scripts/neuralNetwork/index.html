@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/styleButton.css">
 <script type="text/javascript" src="1.js"></script>
@@ -9,19 +10,34 @@
 	<title>Нейронная сетОчка</title>
 </head>
 <body>
-<content>
-	<div class="controlBar">
-		<button onclick="getNumberResult()">Старт</button>
-		<button onclick="currentCanvas.clear()">Очистить поле</button>
-		<button  id="learningButton" hidden="hidden" onclick="activateLearning()">запуск с обучением</button>
-		<button id="buttonStart" onclick="main()">Тестовый прогон</button>
-		<button  id="unlearningButton" onclick="deactivateLearning()">запуск без обучением</button>
-		<button  onclick="exportLearningWeights()">Export data to local txt file</button>
-		<div class="controlBarAnswer" id="controlBarAnswer">
-		</div>
+<div class="container d-flex flex-column w-100 h-100 p-1 mx-auto">
+<header>
+	<div class="d-flex flex-wrap justify-content-center mb-4">
+		<a href="./index.html" class="d-flex align-items-center mb-3 mb-md-0 me-lg-auto">
+			<img src="/HITsLogo.svg" alt="HITsLogo" width="50" height="42">
+		</a>
+		<ul class="nav nav-underline col-12 col-lg-auto justify-content-center mb-md-0">
+			<li class="nav-item"><a class="nav-link link-light" aria-current="page" href="index.html">Главная</a></li>
+			<li class="nav-item"><a class="nav-link link-light" href="./algorithmsPage.html">Алгоритмы</a></li>
+		</ul>
 	</div>
-	<canvas id="canv" style="display: block" >чето</canvas>
-</content>
+</header>
+
+	<content>
+		<div class="controlBar">
+			<button onclick="getNumberResult()">Старт</button>
+			<button onclick="currentCanvas.clear()">Очистить поле</button>
+			<button class="unimportant" id="learningButton" hidden="hidden" onclick="activateLearning()">запуск с обучением</button>
+			<button id="buttonStart" onclick="main()">Тестовый прогон</button>
+			<button class="unimportant" id="unlearningButton" onclick="deactivateLearning()">запуск без обучением</button>
+			<button class="unimportant"  onclick="exportLearningWeights()">Export data to local txt file</button>
+			<div class="controlBarAnswer" id="controlBarAnswer">
+			</div>
+		</div>
+		<canvas id="canv" >чето</canvas>
+	</content>
+	</div>
+
 
 <script type="text/javascript" src="canvasScript.js"></script>
 
