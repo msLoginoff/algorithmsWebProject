@@ -1,0 +1,123 @@
+.beginButton {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: Helvetica,"sans-serif";
+  transition: all .2s;
+  padding: 5px 20px;
+  border-radius: 100px;
+  color: black;
+  background: #dee2e6;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+  
+.beginButton:hover {
+  background: #dee2e6;
+}
+  
+.link-dark > svg {
+  width: 24px;
+   margin-left: 10px;
+  transition: transform .3s ease-in-out;
+}
+  
+.beginButton:hover svg {
+  transform: translateX(5px);
+}
+
+.card {
+  box-sizing: border-box;
+  background: #212529;
+  border: 1px solid #dee2e6;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: bolder;
+  color: #dee2e6;
+}
+
+.card:hover {
+  border: 1px solid #007bff;
+  transform: scale(1.05);
+}
+
+.card:active {
+  transform: scale(0.95);
+}
+
+#cardAStar {
+  background-image: url('./img/aStar.png');
+  background-size: contain;
+  background-position: center;
+}
+
+#cardClustering {
+  background-image: url('./img/clustering.png');
+  background-size: contain;
+  background-position: center;
+}
+
+#cardGenetic {
+  background-image: url('./img/genetic.png');
+  background-size: contain;
+  background-position: center;
+}
+
+#cardAnt {
+  background-image: url('./img/ant.png');
+  background-size: contain;
+  background-position: center;
+}
+
+#cardTree {
+  background-image: url('./img/tree.png');
+  background-size: contain;
+  background-position: center;
+}
+
+#cardNeural {
+  background-image: url('./img/neural.png');
+  background-size: contain;
+  background-position: center;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #121212;
+  background: linear-gradient(
+    135deg,
+    #121212 25%,
+    #1a1a1a 25%,
+    #1a1a1a 50%,
+    #121212 50%,
+    #121212 75%,
+    #1a1a1a 75%,
+    #1a1a1a
+  );
+  background-size: 40px 40px;
+
+  animation: move 4s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
