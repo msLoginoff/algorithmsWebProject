@@ -11,17 +11,17 @@
     <div class="container d-flex flex-column w-100 h-100 p-4 mx-auto">
       <header>
         <div class="d-flex flex-wrap justify-content-center mb-4">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-lg-auto">
+            <a href="/new/index.html" class="d-flex align-items-center mb-3 mb-md-0 me-lg-auto">
               <img src="/HITsLogo.svg" alt="HITsLogo" width="50" height="42">
             </a>
-
             <ul class="nav nav-underline col-12 col-lg-auto justify-content-center mb-md-0">
-              <li class="nav-item"><a class="nav-link link-light" href="#">Главная</a></li>
-              <li class="nav-item"><a class="nav-link link-light" href="#">Алгоритмы</a></li>
+              <li class="nav-item"><a class="nav-link link-light" href="/new/index.html">Главная</a></li>
+              <li class="nav-item"><a class="nav-link link-light" href="/new/algorithmsPage.html">Алгоритмы</a></li>
             </ul>
         </div>
-
-        <div class="text-center pt-3"><h2>Кластеризация</h2></div>
+        <div class="algorithm-header p-3 pb-md-4 mt-5 text-center">
+          <h1 class="display-4 fw-normal text-body-emphasis">Кластеризация</h1>
+        </div>
       </header>
 
       <main class="mt-5">
@@ -96,11 +96,20 @@
             </div>
           </div>
         </div>
-        <div class="row row-cols-1 py-5 text-center">
-          <div class="col">
-            <button type="button" class="goButton" id="goButton">Go</button>
+
+        <div class="d-flex flex-wrap justify-content-between align-items-center py-5">
+          <div class="col-lg-8">
+            <p class="fs-5 text-body-secondary">
+              Кластеризация (англ. <strong>cluster analysis</strong>) — задача группировки множества объектов на подмножества (кластеры) таким образом, чтобы объекты из одного кластера были более похожи друг на друга, чем на объекты из других кластеров по какому-либо критерию.
+            </p>
+          </div>
+          <div class="col mt-5 mt-lg-0">
+            <div class="d-flex justify-content-center align-items-center">
+              <button type="button" class="goButton" id="goButton">Go</button>
+            </div>
           </div>
         </div>
+        
       </main>
       <footer class="mt-auto text-center text-body-secondary"><p>© 2024 Higher IT School, HITS</p></footer>
       <div id="alert" class="position-fixed bottom-0 end-0 mx-3"></div>
