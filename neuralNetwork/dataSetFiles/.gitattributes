@@ -1,3 +1,0 @@
-dataSetString.js filter=lfs diff=lfs merge=lfs -text
-dataSetForTest.js filter=lfs diff=lfs merge=lfs -text
-2.txt filter=lfs diff=lfs merge=lfs -text
