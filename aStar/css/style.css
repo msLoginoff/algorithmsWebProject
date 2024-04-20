@@ -136,19 +136,8 @@ p {
 }
 
 button {
-    appearance: none;
-    margin: 50px auto auto;
-    width: 200px;
-    height: 50px;
-    display: block;
-    text-decoration: none;
-    user-select: none;
-    outline: none;
-    border: 4px solid;
+    margin: 30px auto auto;
+    //width: 200px;
     border-radius: 45px;
     font-size: 18px;
-    font-family: "Roboto Light", sans-serif;
-    transition: 0.2s all;
-    background-color: transparent;
-    cursor: pointer;
 }
