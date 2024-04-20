@@ -169,7 +169,7 @@ class NetWork {
         }
     }
 
-    forwardFeed() {
+    forwardFeed(isPrint) {
         for (let k = 1; k < this.layersNumber; k++) {
             this.neuronsValues[k] =
                 Matrix.prototype.multi(this.weights[k - 1], this.neuronsValues[k - 1], this.layerSize[k - 1]);
@@ -179,25 +179,12 @@ class NetWork {
             this.neuronsValues[k] = ActivateFunction.prototype.useReLu(this.neuronsValues[k], this.layerSize[k]);
         }
 
-        let prediction = this.searchMaxIndex(this.neuronsValues[this.layersNumber - 1]);
-
-        return prediction;
-
-    }
-
-    forwardFeed2() { //todo добавить функцию внутри
-        for (let k = 1; k < this.layersNumber; k++) {
-            this.neuronsValues[k] =
-                Matrix.prototype.multi(this.weights[k - 1], this.neuronsValues[k - 1], this.layerSize[k - 1]);
-            this.neuronsValues[k] =
-                Matrix.prototype.sumVector(this.neuronsValues[k], this.bias[k - 1], this.layerSize[k]);
-
-            this.neuronsValues[k] = ActivateFunction.prototype.useReLu(this.neuronsValues[k], this.layerSize[k]);
+        if (isPrint === true) {
+            for (let i = 0; i < this.layerSize[this.layersNumber - 1]; i++) {
+                console.log(i, ': ', this.neuronsValues[this.layersNumber - 1][i], '%');
+            }
         }
 
-        for (let i = 0; i < this.layerSize[this.layersNumber - 1]; i++) {
-            console.log(i, ': ', this.neuronsValues[this.layersNumber - 1][i], '%');
-        }
         let prediction = this.searchMaxIndex(this.neuronsValues[this.layersNumber - 1]);
 
         return prediction;
@@ -431,7 +418,7 @@ function main() {
                 for (let i = 0; i < examplesNumber; i++) {
                     netWork.setInput(data[i].pixels);
                     rightDigit = data[i].digit;
-                    predictDigit = netWork.forwardFeed();
+                    predictDigit = netWork.forwardFeed(false);
 
                     if (predictDigit !== rightDigit) {
                         netWork.backPropagation(rightDigit);
@@ -478,8 +465,7 @@ function testRun() {
     for (let i = 0; i < examplesNumber; i++) {
         netWork.setInput(data[i].pixels);
         rightDigit = data[i].digit;
-        console.log(data[i].pixels, rightDigit)
-        predictDigit = netWork.forwardFeed();
+        predictDigit = netWork.forwardFeed(false);
 
         if (predictDigit === rightDigit) {
             rightAnswer++;
@@ -512,7 +498,7 @@ function getNumberResult() {
 
     console.log(vectorTest);
 
-    let predictDigit = netWork.forwardFeed2();
+    let predictDigit = netWork.forwardFeed(true);
 
     answerFromNetwork = predictDigit;
 

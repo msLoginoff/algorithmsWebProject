@@ -1,7 +1,6 @@
 function DCanvas(el) {
-    let canvasVariable = document.getElementById('canv');
+    const canvasVariable = document.getElementById('canv');
     const ctx = el.getContext('2d');
-    const pixels = 10;
 
     let IsMouseDown = false;
 
@@ -32,16 +31,6 @@ function DCanvas(el) {
             }
         }
 
-        /*for (let i = 0; i < p + 1; i++) {
-            vector.pop()
-        }*/
-
-        // let tmp = 0;
-        // for (let i = 0; i < p; i++) {
-        //     vector.splice((p + 1) * i + p - tmp, 1);
-        //     tmp++;
-        // }
-
         ctx.scale(10, 10);
         return vector;
     }
@@ -65,7 +54,7 @@ function DCanvas(el) {
             ctx.stroke();
 
             ctx.beginPath();
-            ctx.arc(e.offsetX, e.offsetY, 30 / 2, 0, Math.PI * 2);
+            ctx.arc(e.offsetX, e.offsetY, ctx.lineWidth / 2, 0, Math.PI * 2);
             ctx.fill();
 
             ctx.beginPath();
