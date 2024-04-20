@@ -181,7 +181,7 @@ class NetWork {
 
         if (isPrint === true) {
             for (let i = 0; i < this.layerSize[this.layersNumber - 1]; i++) {
-                console.log(i, ': ', this.neuronsValues[this.layersNumber - 1][i], '%');
+                console.log(i, ': ', (this.neuronsValues[this.layersNumber - 1][i] + 1.05) / 2.1 * 100, '%');
             }
         }
 

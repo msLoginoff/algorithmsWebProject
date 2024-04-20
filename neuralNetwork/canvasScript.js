@@ -48,7 +48,7 @@ function DCanvas(el) {
         if (IsMouseDown) {
             ctx.fillStyle = '#ff8800';
             ctx.strokeStyle = '#ff8800';
-            ctx.lineWidth = 30//pixels + 20;
+            ctx.lineWidth = 24//pixels + 20;
 
             ctx.lineTo(e.offsetX, e.offsetY);
             ctx.stroke();

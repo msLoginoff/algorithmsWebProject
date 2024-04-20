@@ -237,6 +237,7 @@ function search() {
 
     pasteAnswer();
 
+    clearTimeout(timeCoefficient * counter);
     return [];
 }
 
